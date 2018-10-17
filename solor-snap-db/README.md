@@ -1,12 +1,12 @@
 SOLOR Database builder
 ======================
 
-Tooling to assemble a SOLOR database from IBDF artifacts. 
+Tooling to assemble a SOLOR database from IBDF artifacts.
 
-    <groupId>one.solor</groupId>
+    <groupId>org.humandx.ontology</groupId>
     <artifactId>solor-db</artifactId>
     <name>${project.parent.artifactId}: ${project.artifactId}</name>
-    
+
     <version>1.2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -16,21 +16,21 @@ Build & Release Notes
 Lucene indexing takes a significant amount of memory. If insufficient
 memory is allocated, the process with thrash, and may not complete in reasonable
 time. If sufficient memory is allocated, it should complete in 5-10
-minutes. 
+minutes.
 
 ## Setting sufficient memory
-On the command line executing the process, execute the following: 
+On the command line executing the process, execute the following:
 ```
 $export MAVEN_OPTS="-Xmx12g -XX:+UseG1GC"
 ```
-to confirm the maven settings, execute the following: 
+to confirm the maven settings, execute the following:
 ```
 $echo $MAVEN_OPTS
 ```
 
 ## Performing a release
 
-Substitute your server address for example.com in the below example. 
+Substitute your server address for example.com in the below example.
 ```
 mvn -DaltDeploymentRepository=central::default::http://example.com/artifactory/libs-release-local \
  jgitflow:release-start jgitflow:release-finish
@@ -38,7 +38,7 @@ mvn -DaltDeploymentRepository=central::default::http://example.com/artifactory/
 
 Example output from successful release:
 ```
-...  
+...
     [INFO] ------------------------------------------------------------------------
     [INFO] BUILD SUCCESS
     [INFO] ------------------------------------------------------------------------
