@@ -4,18 +4,18 @@
     <parent>
         <groupId>sh.isaac.integration</groupId>
         <artifactId>db-builder</artifactId>
-        <version>4.54</version>
+        <version>4.62</version>
     </parent>
-    
-    <groupId>one.solor</groupId>
-    <artifactId>solor-snap-db</artifactId>
+
+    <groupId>org.humandx.ontology</groupId>
+    <artifactId>data</artifactId>
     <name>${project.parent.artifactId}: ${project.artifactId}</name>
-    
-    <version>1.22-SNAPSHOT</version>
+
+    <version>1.0.0</version>
     <packaging>pom</packaging>
-    
+
     <description>An ISAAC database, including Snomed SNAPSHOT data</description>
-    
+
     <properties>
         <sct.version>20180731T120000Z</sct.version>
         <sct-au.version>20171031</sct-au.version>
@@ -33,7 +33,7 @@
         <isaac-metadata.version>${project.parent.version}</isaac-metadata.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    
+
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -50,7 +50,7 @@
             <comments>The SNOMED CT content packaged by this module is governed by the SNOMED CT affiliate license agreement</comments>
         </license>
     </licenses>
-    
+
 
     <dependencies>
         <!-- Metadata -->
@@ -63,7 +63,7 @@
             <optional>true</optional> <!-- Not needed at runtime / transitively -->
         </dependency>
         <dependency>
-            <groupId>one.solor</groupId>
+            <groupId>org.humandx.ontology</groupId>
             <artifactId>sct</artifactId>
             <version>${sct.version}</version>
             <type>zip</type>
@@ -120,14 +120,14 @@
                     <execution>
                         <id>load-ibdf-metadata</id>
                         <goals>
-                            <goal>load-termstore</goal>
+                            <goal>load-termstore-semaphore</goal>
                         </goals>
                         <configuration>
                             <ibdfFiles>
                                 <ibdfFile>${project.build.directory}/data/IsaacMetadataAuxiliary.ibdf</ibdfFile>
                             </ibdfFiles>
                         </configuration>
-                    </execution>                    
+                    </execution>
                     <execution>
                         <id>count-after-load</id>
                         <goals>
@@ -156,7 +156,7 @@
                             <!-- <goal>stop-heap-ticker</goal>
                             <goal>stop-tasks-ticker</goal>-->
                             <goal>shutdown-isaac</goal>
-                           
+
                         </goals>
                     </execution>
                 </executions>
@@ -317,7 +317,7 @@
                     </execution>
                 </executions>
             </plugin>
-                
+
         </plugins>
     </build>
     <profiles>
@@ -325,20 +325,20 @@
             <id>spanish</id>
             <dependencies>
                 <dependency>
-                    <groupId>one.solor</groupId>
+                    <groupId>org.humandx.ontology</groupId>
                     <artifactId>sct-es</artifactId>
                     <version>${sct-es.version}</version>
                     <type>zip</type>
                     <optional>true</optional>  <!-- Not needed at runtime / transitively -->
                     <scope>compile</scope>
-                </dependency>            
+                </dependency>
             </dependencies>
         </profile>
         <profile>
             <id>au</id>
             <dependencies>
                 <dependency>
-                    <groupId>one.solor</groupId>
+                    <groupId>org.humandx.ontology</groupId>
                     <artifactId>sct-au</artifactId>
                     <version>${sct-au.version}</version>
                     <type>zip</type>
@@ -351,7 +351,7 @@
             <id>uk</id>
             <dependencies>
                 <dependency>
-                    <groupId>one.solor</groupId>
+                    <groupId>org.humandx.ontology</groupId>
                     <artifactId>sct-uk</artifactId>
                     <version>${sct-uk.version}</version>
                     <type>zip</type>
@@ -359,20 +359,20 @@
                     <scope>compile</scope>
                 </dependency>
                 <dependency>
-                    <groupId>one.solor</groupId>
+                    <groupId>org.humandx.ontology</groupId>
                     <artifactId>sct-uk-dmd</artifactId>
                     <version>${sct-uk-dmd.version}</version>
                     <type>zip</type>
                     <optional>true</optional>  <!-- Not needed at runtime / transitively -->
                     <scope>compile</scope>
-                </dependency>            
+                </dependency>
             </dependencies>
         </profile>
         <profile>
             <id>us</id>
             <dependencies>
                 <dependency>
-                    <groupId>one.solor</groupId>
+                    <groupId>org.humandx.ontology</groupId>
                     <artifactId>sct-us</artifactId>
                     <version>${sct-us.version}</version>
                     <type>zip</type>
