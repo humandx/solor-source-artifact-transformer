@@ -6,16 +6,16 @@
         <artifactId>db-builder</artifactId>
         <version>4.62</version>
     </parent>
-    
-    <groupId>one.solor</groupId>
+
+    <groupId>org.humandx.ontology</groupId>
     <artifactId>solor-db</artifactId>
     <name>${project.parent.artifactId}: ${project.artifactId}</name>
-    
+
     <version>1.30</version>
     <packaging>pom</packaging>
-    
+
     <description>An ISAAC database, including Snomed</description>
-    
+
     <properties>
         <sct.version>20180731T120000Z</sct.version>
         <sct-au.version>20171031</sct-au.version>
@@ -33,7 +33,7 @@
         <isaac-metadata.version>${project.parent.version}</isaac-metadata.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    
+
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -50,7 +50,7 @@
             <comments>The SNOMED CT content packaged by this module is governed by the SNOMED CT affiliate license agreement</comments>
         </license>
     </licenses>
-    
+
 
     <dependencies>
         <!-- Metadata -->
@@ -63,7 +63,7 @@
             <optional>true</optional> <!-- Not needed at runtime / transitively -->
         </dependency>
         <dependency>
-            <groupId>one.solor</groupId>
+            <groupId>org.humandx.ontology</groupId>
             <artifactId>sct</artifactId>
             <version>${sct.version}</version>
             <type>zip</type>
@@ -71,55 +71,55 @@
             <scope>compile</scope>
         </dependency>
 <!--        <dependency>
-            <groupId>one.solor</groupId>
+            <groupId>org.humandx.ontology</groupId>
             <artifactId>sct-au</artifactId>
             <version>${sct-au.version}</version>
             <type>zip</type>
-            <optional>true</optional>  Not needed at runtime / transitively 
+            <optional>true</optional>  Not needed at runtime / transitively
             <scope>compile</scope>
         </dependency>-->
 <!--        <dependency>
-            <groupId>one.solor</groupId>
+            <groupId>org.humandx.ontology</groupId>
             <artifactId>sct-es</artifactId>
             <version>${sct-es.version}</version>
             <type>zip</type>
-            <optional>true</optional>  Not needed at runtime / transitively 
+            <optional>true</optional>  Not needed at runtime / transitively
             <scope>compile</scope>
         </dependency>-->
 <!--        <dependency>
-            <groupId>one.solor</groupId>
+            <groupId>org.humandx.ontology</groupId>
             <artifactId>sct-loinc</artifactId>
             <version>${sct-loinc.version}</version>
             <type>zip</type>
-            <optional>true</optional>  Not needed at runtime / transitively 
+            <optional>true</optional>  Not needed at runtime / transitively
             <scope>compile</scope>
         </dependency>-->
 <!--        <dependency>
-            <groupId>one.solor</groupId>
+            <groupId>org.humandx.ontology</groupId>
             <artifactId>sct-uk</artifactId>
             <version>${sct-uk.version}</version>
             <type>zip</type>
-            <optional>true</optional>  Not needed at runtime / transitively 
+            <optional>true</optional>  Not needed at runtime / transitively
             <scope>compile</scope>
         </dependency>-->
 <!--        <dependency>
-            <groupId>one.solor</groupId>
+            <groupId>org.humandx.ontology</groupId>
             <artifactId>sct-uk-dmd</artifactId>
             <version>${sct-uk-dmd.version}</version>
             <type>zip</type>
-            <optional>true</optional>  Not needed at runtime / transitively 
+            <optional>true</optional>  Not needed at runtime / transitively
             <scope>compile</scope>
         </dependency>-->
 <!--        <dependency>
-            <groupId>one.solor</groupId>
+            <groupId>org.humandx.ontology</groupId>
             <artifactId>sct-us</artifactId>
             <version>${sct-us.version}</version>
             <type>zip</type>
-            <optional>true</optional>  Not needed at runtime / transitively 
+            <optional>true</optional>  Not needed at runtime / transitively
             <scope>compile</scope>
         </dependency>-->
 
-<!--  
+<!--
         <!-\- LOINC -\->
         <dependency>
             <groupId>gov.vha.isaac.terminology.converted</groupId>
@@ -129,7 +129,7 @@
             <optional>true</optional> <!-\- Not needed at runtime / transitively -\->
             <scope>compile</scope>
         </dependency>
-        
+
         <dependency>
             <groupId>gov.vha.isaac.terminology.converted</groupId>
             <artifactId>rxnorm-ibdf</artifactId>
@@ -193,14 +193,14 @@
                         <configuration>
                             <ibdfFiles>
                                 <ibdfFile>${project.build.directory}/data/IsaacMetadataAuxiliary.ibdf</ibdfFile>
-                                
-                                <!--                               <ibdfFile>${project.build.directory}/data/rf2-ibdf-sct-Full.ibdf</ibdfFile> --> 
-                                <!--                                <ibdfFile>${project.build.directory}/data/loinc-ibdf-tech-preview.ibdf</ibdfFile> --> 
-                                <!--                                <ibdfFile>${project.build.directory}/data/rxnorm-ibdf.ibdf</ibdfFile> --> 
-                                <!--                                <ibdfFile>${project.build.directory}/data/rf2-ibdf-us-extension-Full.ibdf</ibdfFile> --> 
+
+                                <!--                               <ibdfFile>${project.build.directory}/data/rf2-ibdf-sct-Full.ibdf</ibdfFile> -->
+                                <!--                                <ibdfFile>${project.build.directory}/data/loinc-ibdf-tech-preview.ibdf</ibdfFile> -->
+                                <!--                                <ibdfFile>${project.build.directory}/data/rxnorm-ibdf.ibdf</ibdfFile> -->
+                                <!--                                <ibdfFile>${project.build.directory}/data/rf2-ibdf-us-extension-Full.ibdf</ibdfFile> -->
                             </ibdfFiles>
                         </configuration>
-                    </execution>                    
+                    </execution>
                     <execution>
                         <id>count-after-load</id>
                         <goals>
@@ -229,7 +229,7 @@
                             <!-- <goal>stop-heap-ticker</goal>
                             <goal>stop-tasks-ticker</goal>-->
                             <goal>shutdown-isaac</goal>
-                           
+
                         </goals>
                     </execution>
                 </executions>

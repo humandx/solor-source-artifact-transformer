@@ -3,7 +3,7 @@ SOLOR Database builder
 
 Tooling to assemble a SOLOR database from IBDF artifacts. 
 
-    <groupId>one.solor</groupId>
+    <groupId>org.humandx.ontology</groupId>
     <artifactId>solor-db</artifactId>
     <name>${project.parent.artifactId}: ${project.artifactId}</name>
     
